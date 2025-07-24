@@ -1,0 +1,8 @@
+services:
+  labhub-proxy:
+    build: .
+    ports:
+      - "8080:8080" # Порт зависит от твоего приложения
+    volumes:
+      - ./config.yml:/app/config.yml # если нужно монтировать конфиг из локальной папки
+    restart: unless-stopped
